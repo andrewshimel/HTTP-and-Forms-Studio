@@ -7,8 +7,10 @@
     window.addEventListener("load", function(){
         // TODO: register the handler
 		let searchForm = document.getElementById("searchForm");
+		
 		searchForm.addEventListener("submit", function(){
 			let engine = document.querySelector("input[name=engine]:checked");
+			engine = engine.value;
 			let actionURL;
 			let actions = {
 				"google" : "https://www.google.com/search",
@@ -17,6 +19,7 @@
 				"ask" : "https://www.ask.com/web"
 			};
 			actionURL = actions[engine];
+			console.log(engine);
 			searchForm.setAttribute("action", actionURL);
 		});
 
